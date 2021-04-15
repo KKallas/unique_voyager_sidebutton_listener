@@ -12,7 +12,7 @@ voyager_address_port = ('', 30000)
 voyager_socket.bind(voyager_address_port)
 
 def HandleUniqueSerial(serial):
-    print("Side button click: %s" % serial)
+    print("%s" % serial)
     
 
 def HandleMessage(messageDict, origin):
@@ -35,8 +35,6 @@ def HandleMessage(messageDict, origin):
                 LIST_VOYAGER_SERIALS.append(serial)
 
 
-
-print("Waiting for Voyager side button clicks")
 while(True):
     (message, origin) = voyager_socket.recvfrom(4096)
     
